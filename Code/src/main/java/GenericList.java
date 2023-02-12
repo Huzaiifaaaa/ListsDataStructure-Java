@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public abstract class GenericList<T> implements Iterable<T>
+public abstract class GenericList<T> implements GenericInterface<T>
 {
     private Node<T> head;
     private int length;
@@ -92,28 +92,9 @@ public abstract class GenericList<T> implements Iterable<T>
         this.head = head;
     }
 
-    public Iterator<T> descendingIterator()
-    {
-        return new Iterator<T>() 
-        {
-            Node<T> current = head;
-            int index = length - 1;
-
-            @Override
-            public boolean hasNext() 
-            {
-                return index >= 0;
-            }
-
-            @Override
-            public T next() 
-            {
-                T data = get(index);
-                index--;
-                return data;
-            }
-
-        };
+    @Override
+    public GenericIterator<T> GenericInterface() {
+        return new GenericIterator<>(getHead());
     }
 
     class Node<T>

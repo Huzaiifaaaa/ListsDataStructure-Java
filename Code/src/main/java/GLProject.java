@@ -10,5 +10,10 @@ public class GLProject {
 		GenericQueue<String> queue = new GenericQueue<String>("Hello");
 		queue.enqueue("World");
 		queue.enqueue("!");
+
+		GenericIterator<String> myStackIterator = queue.GenericInterface();
+
+		myStackIterator.descendingIterator();
+		queue.print();
 	}
 }

@@ -5,8 +5,12 @@ public class GenericQueue<T> extends GenericList<T>
 
   public GenericQueue(T data)
   {
-    super();
-    tail = getHead();
+    Node<T> node = new Node<T>();
+    node.data = data;
+    node.next = null;
+    setHead(node);
+    this.tail = node;
+    setLength(1);
   }
 
   public T delete() 
@@ -33,6 +37,7 @@ public class GenericQueue<T> extends GenericList<T>
     }
     
     setLength(getLength() - 1);
+    return head.data;
   }
 
   public void add(T data) 
