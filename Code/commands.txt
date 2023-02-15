@@ -1,0 +1,4 @@
+mvn compile
+mvn exec:java -Dexec.mainClass="GLProject"
+mvn exec:java -Dexec.mainClass="GQTest"
+exec:java
